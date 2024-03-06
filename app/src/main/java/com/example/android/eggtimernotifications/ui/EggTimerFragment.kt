@@ -39,13 +39,13 @@ class EggTimerFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         val binding: FragmentEggTimerBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_egg_timer, container, false
         )
 
-        val viewModel = ViewModelProvider(this).get(EggTimerViewModel::class.java)
+        val viewModel = ViewModelProvider(this)[EggTimerViewModel::class.java]
 
         binding.eggTimerViewModel = viewModel
         binding.lifecycleOwner = this.viewLifecycleOwner
